@@ -10,7 +10,7 @@ package Actividades;
  */
 public class Nadar extends Actividades {
 
-    public Nadar(int cantidadEnergia, int cantidadAburrimiento, int tiempoRestante) {
+    public Nadar() {
         super(10,10,10);
     }
     

@@ -10,7 +10,7 @@ package Actividades;
  */
 public class BatallaLegendaria extends Actividades {
 
-    public BatallaLegendaria(int cantidadEnergia, int cantidadAburrimiento, int tiempoRestante) {
+    public BatallaLegendaria() {
         super(25,25,25);
     }
     
