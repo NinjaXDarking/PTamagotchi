@@ -17,6 +17,7 @@ public class Mascota {
     private int necesidades;
     private boolean estadoSalud;
     private String nombre;
+    private boolean vida;
     
     public Mascota(){
         this.edad = 0;
@@ -25,6 +26,7 @@ public class Mascota {
         this.hambre = 0;
         this.aburrimiento = 0;
         this.necesidades = 0;
+        this.vida = true;
         this.nombre = "Default";            
     }
 
@@ -36,12 +38,38 @@ public class Mascota {
         this.hambre = 0;
         this.aburrimiento = 0;
         this.necesidades = 0;
+        this.vida = true;
         this.nombre = nombre;
+    }
+
+    public boolean isEstadoSalud() {
+        return estadoSalud;
+    }
+
+    public void setEstadoSalud(boolean estadoSalud) {
+        this.estadoSalud = estadoSalud;
+    }
+
+    public boolean isVida() {
+        return vida;
+    }
+
+    public void setVida(boolean vida) {
+        this.vida = vida;
     }
     
     public void alimentar(Alimentos comida){
-        this.energia-=comida.getCantidadDeEnergia();
-        this.hambre+=comida.getCantidadDeSatisfacion();
+        int SEnergia = this.energia+comida.getCantidadDeEnergia();
+        int RHambre = this.hambre-comida.getCantidadAlimento();
+        setEnergia(SEnergia);
+        setHambre(RHambre);
+    }
+    
+     public void alimentar(Actividades actividad){
+        int REnergia = actividad.getCantidadEnergia();
+        int RAburrimiento = this.hambre-actividad.getCantidadAburrimiento();
+        setEnergia(-REnergia);
+        setHambre(RAburrimiento);
     }
 
     public int getEdad() {
@@ -57,7 +85,11 @@ public class Mascota {
     }
 
     public void setEnergia(int energia) {
-        this.energia = energia;
+        if (energia>100) {
+            this.energia=100;
+        } else {
+            this.energia+=energia;
+        }
     }
 
     public int getHambre() {
@@ -65,7 +97,12 @@ public class Mascota {
     }
 
     public void setHambre(int hambre) {
-        this.hambre = hambre;
+        if (hambre<0) {
+            this.energia=0;
+            this.vida=false;
+        } else {
+            this.hambre-=hambre;
+        }
     }
 
     public int getAburrimiento() {
@@ -73,7 +110,12 @@ public class Mascota {
     }
 
     public void setAburrimiento(int aburrimiento) {
-        this.aburrimiento = aburrimiento;
+        if (aburrimiento<0) {
+            this.aburrimiento=0;
+            this.vida=false;
+        } else {
+            this.aburrimiento-=0;
+        }
     }
 
     public int getNecesidades() {
@@ -112,7 +154,7 @@ public class Mascota {
         return this.estadoSalud;
     }
     
-    public void Sanitario(){
+    public void IrAlSanitario(){
         this.necesidades-=10;
     }
     
@@ -127,10 +169,20 @@ public class Mascota {
 //    }
     
     public void Descansar(){
-        this.energia+=10;
-        this.aburrimiento+=5;
-        this.hambre+=5;
-        this.necesidades+=5;
+        if (this.energia+10>100) {
+            this.energia+=100;
+        } else if (this.aburrimiento+5>100) {
+            this.vida=false;
+        } else if (this.hambre+5>100) {
+            this.vida=false;
+        } else if (this.necesidades+5>100) {
+            this.vida=false;
+        } else {
+            this.energia+=10;
+            this.aburrimiento+=5;
+            this.hambre+=5;
+            this.necesidades+=5;
+        }
     }
     
 }
