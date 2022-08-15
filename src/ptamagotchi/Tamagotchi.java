@@ -4,18 +4,58 @@
  */
 package ptamagotchi;
 
+import Actividades.BatallaLegendaria;
+import Actividades.Batallar;
+import Actividades.Caminar;
+import Actividades.Entrenar;
+import Actividades.Nadar;
+import Alimentos.Alga;
+import Alimentos.BabiriBerry;
+import Alimentos.FigyBerry;
+import Alimentos.GrepaBerry;
+import Alimentos.TangaBerry;
+import Mascota.Mascota;
+import Medicamentos.PocionMaxima;
+
 /**
  *
  * @author Emanuel
  */
 public class Tamagotchi extends javax.swing.JFrame {
+    public Mascota mascota;
+    public Nadar nadar;
+    public Entrenar entrenar;
+    public Caminar caminar;
+    public Batallar batalla;
+    public BatallaLegendaria batallaLegen;
+    public Alga alga;
+    public BabiriBerry Babiri;
+    public FigyBerry Figy;
+    public GrepaBerry Grepa;
+    public TangaBerry Tanga;
+    public PocionMaxima PocionMax;
 
     /**
      * Creates new form Tamagotchi
      */
     public Tamagotchi() {
         initComponents();
+        mascota = new Mascota();
+        nadar = new Nadar();
+        entrenar = new Entrenar();
+        caminar = new Caminar();
+        batalla = new Batallar();
+        batallaLegen = new BatallaLegendaria();
+        alga = new Alga();
+        Babiri = new BabiriBerry();
+        Figy = new FigyBerry();
+        Grepa = new GrepaBerry();
+        Tanga = new TangaBerry();
+        PocionMax = new PocionMaxima();
     }
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,11 +72,11 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 745, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 415, Short.MAX_VALUE)
         );
 
         pack();
