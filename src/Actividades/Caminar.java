@@ -8,7 +8,11 @@ package Actividades;
  *
  * @author Lenovo
  */
-public class Caminar {
+public class Caminar extends Actividades {
+
+    public Caminar(int cantidadEnergia, int cantidadAburrimiento, int tiempoRestante) {
+        super(cantidadEnergia, cantidadAburrimiento, tiempoRestante);
+    }
     
     
     
