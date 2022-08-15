@@ -4,6 +4,9 @@
  */
 package Mascota;
 
+import Actividades.Actividades;
+import Alimentos.Alimentos;
+
 /**
  *
  * @author Emanuel
@@ -59,7 +62,7 @@ public class Mascota {
     }
     
     public void alimentar(Alimentos comida){
-        int SEnergia = this.energia+comida.getCantidadDeEnergia();
+        int SEnergia = this.energia+comida.getCantidadEnergia();
         int RHambre = this.hambre-comida.getCantidadAlimento();
         setEnergia(SEnergia);
         setHambre(RHambre);
