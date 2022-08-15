@@ -12,7 +12,7 @@ import Alimentos.Alimentos;
  */
 public class FigyBerry extends Alimentos{
 
-    public FigyBerry(int cantidadEnergia, int cantidadAlimento, int tiempoRestante) {
+    public FigyBerry() {
         super(20,20,20);
     }
     

@@ -12,7 +12,7 @@ import Alimentos.Alimentos;
  */
 public class TangaBerry extends Alimentos{
 
-    public TangaBerry(int cantidadEnergia, int cantidadAlimento, int tiempoRestante) {
+    public TangaBerry() {
         super(25,25,25);
     }
     

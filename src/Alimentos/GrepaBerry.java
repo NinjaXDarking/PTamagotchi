@@ -12,7 +12,7 @@ import Alimentos.Alimentos;
  */
 public class GrepaBerry extends Alimentos{
 
-    public GrepaBerry(int cantidadEnergia, int cantidadAlimento, int tiempoRestante) {
+    public GrepaBerry() {
         super(10,10,10);
     }
     

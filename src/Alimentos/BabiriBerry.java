@@ -14,7 +14,7 @@ import Alimentos.Alimentos;
  */
 public class BabiriBerry extends Alimentos {
 
-    public BabiriBerry(int cantidadEnergia, int cantidadAlimento, int tiempoRestante) {
+    public BabiriBerry() {
         super(15,15,15);
     }
     

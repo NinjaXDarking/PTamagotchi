@@ -6,7 +6,7 @@ package Alimentos;
  */
 public class Alga extends Alimentos {
 
-    public Alga(int cantidadEnergia, int cantidadAlimento, int tiempoRestante) {
+    public Alga() {
         super(5,5,5);
     }
     
