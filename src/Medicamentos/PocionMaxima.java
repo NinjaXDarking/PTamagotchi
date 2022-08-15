@@ -8,6 +8,10 @@ package Medicamentos;
  *
  * @author Emanuel
  */
-public class PocionMaxima {
+public class PocionMaxima extends Medicinas{
+
+    public PocionMaxima(boolean estadoSalud, int energia, int aburrimiento, int necesidades, int hambre, int tiempoRestante) {
+        super(true,20,20,20,20,24);
+    }
     
 }
