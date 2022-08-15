@@ -11,7 +11,7 @@ package Actividades;
 public class BatallaLegendaria extends Actividades {
 
     public BatallaLegendaria(int cantidadEnergia, int cantidadAburrimiento, int tiempoRestante) {
-        super(cantidadEnergia, cantidadAburrimiento, tiempoRestante);
+        super(25,25,25);
     }
     
 }
