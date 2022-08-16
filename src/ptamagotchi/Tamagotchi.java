@@ -16,6 +16,11 @@ import Alimentos.GrepaBerry;
 import Alimentos.TangaBerry;
 import Mascota.Mascota;
 import Medicamentos.PocionMaxima;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,8 +58,25 @@ public class Tamagotchi extends javax.swing.JFrame {
         Tanga = new TangaBerry();
         PocionMax = new PocionMaxima();
     }
-
     
+    public void actualizarEdad(){
+        this.lblEdad3.setText("Edad: "+mascota.getEdad());
+    }
+
+    public void actualizarBarra(){
+        this.barEnergia.setValue(mascota.getEnergia());
+        this.barHambre.setValue(mascota.getHambre());
+        this.barAburrimiento.setValue(mascota.getAburrimiento());
+        this.barNecesidades.setValue(mascota.getNecesidades());
+    }
+    
+    public void actualizarEstadoSalud(boolean estado){
+        if (estado) {
+            this.lblEstadoSalud.setText("Estado: Saludable");
+        } else {
+            this.lblEstadoSalud.setText("Estado: Enfermo");
+        }
+    }
     
 
     /**
@@ -66,22 +88,454 @@ public class Tamagotchi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblEdad2 = new javax.swing.JLabel();
+        btnComenzar = new javax.swing.JButton();
+        lblFondoInicio = new javax.swing.JLabel();
+        btnAlga = new javax.swing.JButton();
+        barAburrimiento = new javax.swing.JProgressBar();
+        barEnergia = new javax.swing.JProgressBar();
+        barHambre = new javax.swing.JProgressBar();
+        barNecesidades = new javax.swing.JProgressBar();
+        btnDescansar = new javax.swing.JButton();
+        lblMascota = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblTextoImagen = new javax.swing.JLabel();
+        lblEdad3 = new javax.swing.JLabel();
+        lblMedicamentos = new javax.swing.JLabel();
+        lblEstadoSalud = new javax.swing.JLabel();
+        btnCaminar = new javax.swing.JButton();
+        btnBabiri = new javax.swing.JButton();
+        btnFigy = new javax.swing.JButton();
+        btnGrepa = new javax.swing.JButton();
+        btnTanga = new javax.swing.JButton();
+        btnNadar = new javax.swing.JButton();
+        btnEntrenar = new javax.swing.JButton();
+        btnBatallar = new javax.swing.JButton();
+        btnBatallaLegen = new javax.swing.JButton();
+        btnSanitario = new javax.swing.JButton();
+        btnCentroPo = new javax.swing.JButton();
+        btnAventura = new javax.swing.JButton();
+        btnPocionMax = new javax.swing.JButton();
+        lblEscenario = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 745, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
-        );
+        lblEdad2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnComenzar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnComenzar.setForeground(new java.awt.Color(255, 255, 255));
+        btnComenzar.setText("Comenzar");
+        btnComenzar.setContentAreaFilled(false);
+        btnComenzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComenzarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 150, 50));
+
+        lblFondoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo inicio.jpeg"))); // NOI18N
+        getContentPane().add(lblFondoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
+
+        btnAlga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/algaP1.png"))); // NOI18N
+        btnAlga.setToolTipText("");
+        btnAlga.setContentAreaFilled(false);
+        btnAlga.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/algaP2.png"))); // NOI18N
+        btnAlga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlgaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAlga, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, -1, -1));
+
+        barAburrimiento.setToolTipText("");
+        barAburrimiento.setString("Aburrimiento");
+        barAburrimiento.setStringPainted(true);
+        getContentPane().add(barAburrimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 35, 175, 20));
+
+        barEnergia.setString("Energia");
+        barEnergia.setStringPainted(true);
+        getContentPane().add(barEnergia, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 175, 20));
+
+        barHambre.setString("Hambre");
+        barHambre.setStringPainted(true);
+        getContentPane().add(barHambre, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 85, 175, 20));
+
+        barNecesidades.setString("Necesidades");
+        barNecesidades.setStringPainted(true);
+        getContentPane().add(barNecesidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 175, 20));
+
+        btnDescansar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descansarP1.jpg"))); // NOI18N
+        btnDescansar.setContentAreaFilled(false);
+        btnDescansar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descansarP2.jpg"))); // NOI18N
+        btnDescansar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDescansarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnDescansar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
+
+        lblMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagMascota/egg.png"))); // NOI18N
+        getContentPane().add(lblMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 269, 270));
+
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 126, 30));
+
+        lblTextoImagen.setForeground(new java.awt.Color(255, 255, 255));
+        lblTextoImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblTextoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 126, 30));
+
+        lblEdad3.setForeground(new java.awt.Color(255, 255, 255));
+        lblEdad3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblEdad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 126, 30));
+
+        lblMedicamentos.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedicamentos.setText("Medicamentos");
+        lblMedicamentos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 126, 30));
+
+        lblEstadoSalud.setForeground(new java.awt.Color(255, 255, 255));
+        lblEstadoSalud.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblEstadoSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 126, 30));
+
+        btnCaminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/caminarP1.png"))); // NOI18N
+        btnCaminar.setContentAreaFilled(false);
+        btnCaminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/caminarP2.png"))); // NOI18N
+        btnCaminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCaminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCaminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, -1, -1));
+
+        btnBabiri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/BabiriBerryP1.png"))); // NOI18N
+        btnBabiri.setContentAreaFilled(false);
+        btnBabiri.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/BabiriBerryP2.png"))); // NOI18N
+        btnBabiri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBabiriActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBabiri, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, -1, -1));
+
+        btnFigy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/FigyBerryP1.png"))); // NOI18N
+        btnFigy.setContentAreaFilled(false);
+        btnFigy.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/FigyBerryP2.png"))); // NOI18N
+        btnFigy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFigyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFigy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, -1, -1));
+
+        btnGrepa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/GrepaBerryP1.png"))); // NOI18N
+        btnGrepa.setContentAreaFilled(false);
+        btnGrepa.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/GrepaBerryP2.png"))); // NOI18N
+        btnGrepa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGrepaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnGrepa, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, -1, -1));
+
+        btnTanga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/TangaBerryP1.png"))); // NOI18N
+        btnTanga.setContentAreaFilled(false);
+        btnTanga.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/TangaBerryP2.png"))); // NOI18N
+        btnTanga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTangaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTanga, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, -1, -1));
+
+        btnNadar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/nadarP1.png"))); // NOI18N
+        btnNadar.setContentAreaFilled(false);
+        btnNadar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/nadarP2.png"))); // NOI18N
+        btnNadar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNadarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNadar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
+
+        btnEntrenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/entrenarP1.png"))); // NOI18N
+        btnEntrenar.setContentAreaFilled(false);
+        btnEntrenar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/entrenarP2.png"))); // NOI18N
+        btnEntrenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrenarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEntrenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, -1, -1));
+
+        btnBatallar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallarP1.jpg"))); // NOI18N
+        btnBatallar.setContentAreaFilled(false);
+        btnBatallar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallarP2.jpg"))); // NOI18N
+        btnBatallar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatallarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBatallar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 45, 45));
+
+        btnBatallaLegen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallalegendariaP1.jpg"))); // NOI18N
+        btnBatallaLegen.setContentAreaFilled(false);
+        btnBatallaLegen.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallalegendariaP2.jpg"))); // NOI18N
+        btnBatallaLegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatallaLegenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBatallaLegen, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 45, 45));
+
+        btnSanitario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BañoP1.jpg"))); // NOI18N
+        btnSanitario.setContentAreaFilled(false);
+        btnSanitario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BañoP2.jpg"))); // NOI18N
+        btnSanitario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSanitarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSanitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
+
+        btnCentroPo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/centroPokeIconoP1.png"))); // NOI18N
+        btnCentroPo.setContentAreaFilled(false);
+        btnCentroPo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/centroPokeIconoP2.png"))); // NOI18N
+        btnCentroPo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCentroPoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCentroPo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        btnAventura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poke40.png"))); // NOI18N
+        btnAventura.setContentAreaFilled(false);
+        btnAventura.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poke50.png"))); // NOI18N
+        btnAventura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAventuraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        btnPocionMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maxpocionP1.png"))); // NOI18N
+        btnPocionMax.setContentAreaFilled(false);
+        btnPocionMax.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maxpocionP2.png"))); // NOI18N
+        btnPocionMax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPocionMaxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPocionMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        lblEscenario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aventura.jpg"))); // NOI18N
+        getContentPane().add(lblEscenario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAlgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlgaActionPerformed
+        // TODO add your handling code here:
+        mascota.alimentar(alga);
+        System.out.println(mascota.getEnergia());
+        System.out.println(mascota.hambre);
+        this.btnAlga.setEnabled(false);
+        temporizadorBotones(alga.getTiempoRestante(),this.btnAlga);
+    }//GEN-LAST:event_btnAlgaActionPerformed
+
+    private void btnComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComenzarActionPerformed
+        // TODO add your handling code here:
+        this.lblNombre.setText("Nombre: "+mascota.nombrarMascota());
+        this.lblTextoImagen.setText("Actividades");
+        actualizarEstadoSalud(mascota.isEstadoSalud());
+        actualizarEdad();
+        temporizadorEdad(10);
+        actualizarBarra();
+        temporizadorJuego();
+        BotonesAlimentos(false);
+        this.lblFondoInicio.setVisible(false);
+        this.btnComenzar.setVisible(false);
+        this.btnAventura.setVisible(false);
+    }//GEN-LAST:event_btnComenzarActionPerformed
+
+    public void BotonesAlimentos(boolean estado){
+        this.btnAlga.setVisible(estado);
+        this.btnGrepa.setVisible(estado);
+        this.btnBabiri.setVisible(estado);
+        this.btnFigy.setVisible(estado);
+        this.btnTanga.setVisible(estado);
+
+    }
+    
+    public void BotonesActividades(boolean estado){
+        this.btnEntrenar.setVisible(estado);
+        this.btnNadar.setVisible(estado);
+        this.btnCaminar.setVisible(estado);
+        this.btnBatallaLegen.setVisible(estado);
+        this.btnBatallar.setVisible(estado);
+    }
+    
+    private void btnBabiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBabiriActionPerformed
+        // TODO add your handling code here:
+        mascota.alimentar(Babiri);
+        this.btnBabiri.setEnabled(false);
+        temporizadorBotones(alga.getTiempoRestante(),this.btnBabiri);
+    }//GEN-LAST:event_btnBabiriActionPerformed
+
+    private void btnFigyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFigyActionPerformed
+        // TODO add your handling code here:
+        mascota.alimentar(Figy);
+        this.btnFigy.setEnabled(false);
+        temporizadorBotones(Figy.getTiempoRestante(),this.btnFigy);
+    }//GEN-LAST:event_btnFigyActionPerformed
+
+    private void btnGrepaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrepaActionPerformed
+        // TODO add your handling code here:
+        mascota.alimentar(Grepa);
+        this.btnGrepa.setEnabled(false);
+        temporizadorBotones(Grepa.getTiempoRestante(),this.btnGrepa);
+    }//GEN-LAST:event_btnGrepaActionPerformed
+
+    private void btnTangaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTangaActionPerformed
+        // TODO add your handling code here:
+        mascota.alimentar(Tanga);
+        this.btnTanga.setEnabled(false);
+        temporizadorBotones(Tanga.getTiempoRestante(),this.btnTanga);
+    }//GEN-LAST:event_btnTangaActionPerformed
+
+    private void btnBatallaLegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatallaLegenActionPerformed
+        // TODO add your handling code here:
+        mascota.Actividad(this.batallaLegen);
+        this.btnBatallaLegen.setEnabled(false);
+        temporizadorBotones(batallaLegen.getTiempoRestante(),this.btnBatallaLegen);
+    }//GEN-LAST:event_btnBatallaLegenActionPerformed
+
+    private void btnCentroPoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCentroPoActionPerformed
+        // TODO add your handling code here:
+        this.btnCentroPo.setVisible(false);
+        this.btnAventura.setVisible(true);
+        this.lblEscenario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/"+"centropokemonfondo.jpg")));
+        this.lblTextoImagen.setText("Alimentos");
+        BotonesAlimentos(true);
+        BotonesActividades(false);
+    }//GEN-LAST:event_btnCentroPoActionPerformed
+
+    private void btnAventuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAventuraActionPerformed
+        // TODO add your handling code here:
+        this.btnCentroPo.setVisible(true);
+        this.btnAventura.setVisible(false);
+        this.lblEscenario.setIcon(new ImageIcon(getClass().getResource("/Imagenes/"+"Aventura.jpg")));
+        this.lblTextoImagen.setText("Actividades");
+        BotonesAlimentos(false);
+        BotonesActividades(true);
+    }//GEN-LAST:event_btnAventuraActionPerformed
+
+    private void btnCaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaminarActionPerformed
+        // TODO add your handling code here:
+        mascota.Actividad(caminar);
+        this.btnCaminar.setEnabled(false);
+        temporizadorBotones(caminar.getTiempoRestante(),this.btnCaminar);
+    }//GEN-LAST:event_btnCaminarActionPerformed
+
+    private void btnNadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNadarActionPerformed
+        // TODO add your handling code here:
+        mascota.Actividad(nadar);
+        this.btnNadar.setEnabled(false);
+        temporizadorBotones(nadar.getTiempoRestante(),this.btnNadar);
+    }//GEN-LAST:event_btnNadarActionPerformed
+
+    private void btnEntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenarActionPerformed
+        // TODO add your handling code here:
+        mascota.Actividad(entrenar);
+        this.btnEntrenar.setEnabled(false);
+        temporizadorBotones(entrenar.getTiempoRestante(),this.btnEntrenar);
+    }//GEN-LAST:event_btnEntrenarActionPerformed
+
+    private void btnBatallarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatallarActionPerformed
+        // TODO add your handling code here:
+        mascota.Actividad(batalla);
+        this.btnBatallar.setEnabled(false);
+        temporizadorBotones(batalla.getTiempoRestante(),this.btnBatallar);
+    }//GEN-LAST:event_btnBatallarActionPerformed
+
+    private void btnDescansarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescansarActionPerformed
+        // TODO add your handling code here:
+        mascota.Descansar();
+        this.btnDescansar.setEnabled(false);
+        temporizadorBotones(10,this.btnDescansar);
+    }//GEN-LAST:event_btnDescansarActionPerformed
+
+    private void btnSanitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanitarioActionPerformed
+        // TODO add your handling code here:
+        mascota.IrAlSanitario();
+        this.btnSanitario.setEnabled(false);
+        temporizadorBotones(10,this.btnSanitario);
+    }//GEN-LAST:event_btnSanitarioActionPerformed
+
+    private void btnPocionMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocionMaxActionPerformed
+        // TODO add your handling code here:
+        mascota.usarMedicamento(PocionMax);
+        this.btnPocionMax.setEnabled(false);
+        temporizadorBotones(PocionMax.getTiempoRestante(),this.btnPocionMax);
+    }//GEN-LAST:event_btnPocionMaxActionPerformed
+
+    public void temporizadorBotones(int retraso, JButton boton) {
+        actualizarBarra();
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                boton.setEnabled(true);
+                timer.cancel();
+            }
+         ;},retraso * 1000);
+    }
+    
+    
+    public void temporizadorJuego() {
+        System.out.println("Entre en el timer");
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                mascota.avanceTiempo();
+                boolean x = mascota.comprobarEstado(mascota.isEstadoSalud());
+                if (!x) {
+                    actualizarEstadoSalud(false);
+                    JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                }
+                System.out.println("energia"+mascota.getEnergia());
+                System.out.println("aburrimiento"+mascota.getAburrimiento());
+                System.out.println("necesidades"+mascota.getNecesidades());
+                System.out.println("hambre"+mascota.getHambre());
+                actualizarBarra();
+                temporizadorJuego();
+            }
+         ;},3 * 1000);
+    }
+    
+    public void temporizadorEdad(int tiempo) {
+        System.out.println("Entre en el timer");
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                actualizarEdad();
+                if (mascota.getEdad()==1) {
+                    lblMascota.setIcon(new ImageIcon(getClass().getResource("/ImagMascota/"+"squirtle.gif")));
+                } else if (mascota.getEdad()==10) {
+                    lblMascota.setIcon(new ImageIcon(getClass().getResource("/ImagMascota/"+"wartortle.gif")));
+                } else if (mascota.getEdad()==20) {
+                    lblMascota.setIcon(new ImageIcon(getClass().getResource("/ImagMascota/"+"blastoise.gif")));
+                }
+                temporizadorEdad(tiempo);
+            }
+         ;},tiempo * 1000);
+        mascota.incrementarEdad();
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -118,5 +572,34 @@ public class Tamagotchi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JProgressBar barAburrimiento;
+    public javax.swing.JProgressBar barEnergia;
+    public javax.swing.JProgressBar barHambre;
+    public javax.swing.JProgressBar barNecesidades;
+    private javax.swing.JButton btnAlga;
+    private javax.swing.JButton btnAventura;
+    private javax.swing.JButton btnBabiri;
+    private javax.swing.JButton btnBatallaLegen;
+    private javax.swing.JButton btnBatallar;
+    private javax.swing.JButton btnCaminar;
+    private javax.swing.JButton btnCentroPo;
+    private javax.swing.JButton btnComenzar;
+    private javax.swing.JButton btnDescansar;
+    private javax.swing.JButton btnEntrenar;
+    private javax.swing.JButton btnFigy;
+    private javax.swing.JButton btnGrepa;
+    private javax.swing.JButton btnNadar;
+    private javax.swing.JButton btnPocionMax;
+    private javax.swing.JButton btnSanitario;
+    private javax.swing.JButton btnTanga;
+    public javax.swing.JLabel lblEdad2;
+    public javax.swing.JLabel lblEdad3;
+    private javax.swing.JLabel lblEscenario;
+    public javax.swing.JLabel lblEstadoSalud;
+    private javax.swing.JLabel lblFondoInicio;
+    private javax.swing.JLabel lblMascota;
+    public javax.swing.JLabel lblMedicamentos;
+    public javax.swing.JLabel lblNombre;
+    public javax.swing.JLabel lblTextoImagen;
     // End of variables declaration//GEN-END:variables
 }
