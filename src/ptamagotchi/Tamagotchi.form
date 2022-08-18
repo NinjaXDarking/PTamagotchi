@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JLabel" name="lblEdad2">
       <Properties>
@@ -59,15 +59,67 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFondoInicio">
+    <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/fondo inicio.jpeg"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Hambre:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
+          <AbsoluteConstraints x="560" y="87" width="60" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Energia:"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="560" y="10" width="60" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Necesidades:"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="533" y="60" width="90" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Aburrimiento:"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="525" y="36" width="100" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -76,7 +128,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/algaP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="toolTipText" type="java.lang.String" value="FigyBerry:&#xa;        Energia: +5&#xa;        Hambre: -5&#xa;        Enfriamiento: 5 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/algaP2.png"/>
@@ -94,7 +146,6 @@
     <Component class="javax.swing.JProgressBar" name="barAburrimiento">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
-        <Property name="string" type="java.lang.String" value="Aburrimiento"/>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
@@ -108,7 +159,6 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="barEnergia">
       <Properties>
-        <Property name="string" type="java.lang.String" value="Energia"/>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
@@ -122,7 +172,6 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="barHambre">
       <Properties>
-        <Property name="string" type="java.lang.String" value="Hambre"/>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
@@ -136,7 +185,6 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="barNecesidades">
       <Properties>
-        <Property name="string" type="java.lang.String" value="Necesidades"/>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
@@ -153,6 +201,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/descansarP1.jpg"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Dormir:&#xa;        Energia:&#x9;     +10&#xa;        Hambre: &#x9;     +5&#xa;        Aburrimiento:  +5&#xa;        Necesidades:    +5&#xa;        Enfriamiento:  10 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/descansarP2.jpg"/>
@@ -285,6 +334,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/caminarP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Caminar:&#xa;        Energia: -5&#xa;        Aburrimiento: -5&#xa;        Enfriamiento: 5 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/caminarP2.png"/>
@@ -304,6 +354,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/BabiriBerryP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="BabiriBerry:&#xa;        Energia: +15&#xa;        Hambre: -15&#xa;        Enfriamiento: 15 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/BabiriBerryP2.png"/>
@@ -323,6 +374,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/FigyBerryP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="FigyBerry:&#xa;        Energia: +20&#xa;        Hambre: -20&#xa;        Enfriamiento: 20 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/FigyBerryP2.png"/>
@@ -342,6 +394,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/GrepaBerryP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="GrepaBerry:&#xa;        Energia: +10&#xa;        Hambre: -10&#xa;        Enfriamiento: 10 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/GrepaBerryP2.png"/>
@@ -361,6 +414,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/TangaBerryP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="TangaBerry:&#xa;        Energia: +25&#xa;        Hambre: -25&#xa;        Enfriamiento: 25 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/TangaBerryP2.png"/>
@@ -380,6 +434,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/nadarP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Nadar:&#xa;        Energia: -10&#xa;        Aburrimiento: -10&#xa;        Enfriamiento: 10 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/nadarP2.png"/>
@@ -399,6 +454,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/entrenarP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Entrenar:&#xa;        Energia: -15&#xa;        Aburrimiento: -15&#xa;        Enfriamiento: 15 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/entrenarP2.png"/>
@@ -418,6 +474,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallarP1.jpg"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Batallar:&#xa;        Energia: -20&#xa;        Aburrimiento: -20&#xa;        Enfriamiento: 20 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallarP2.jpg"/>
@@ -437,6 +494,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallalegendariaP1.jpg"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Batalla Legendaria:&#xa;        Energia: -25&#xa;        Aburrimiento: -25&#xa;        Enfriamiento: 25 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallalegendariaP2.jpg"/>
@@ -456,6 +514,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Ba&#xf1;oP1.jpg"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Ba&#xf1;arse:&#xa;        Necesidades: -10&#xa;        Enfriamiento: 10 Segundos"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Ba&#xf1;oP2.jpg"/>
@@ -475,6 +534,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/centroPokeIconoP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="&#x9;IR AL CENTRO POKEMON"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/centroPokeIconoP2.png"/>
@@ -494,6 +554,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/poke40.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="&#x9;IR DE EXPEDICION"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/poke50.png"/>
@@ -513,6 +574,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/maxpocionP1.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;PocionMaxima:&lt;br&gt;\n&quot; +&#xd;&#xa;&quot;        Energia:            -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Hambre:           -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Aburrimiento:  -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Necesidades:    -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento:    1 Dia.\n&lt;br&gt;&quot; +&#xd;&#xa;&quot; &#x9;Condicionado:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;&#x9;Te cura si te encuentras enfermo y te aumenta\n&lt;br&gt;&quot; +&#xd;&#xa;&quot; &#x9;la estadistica en CRITICO con los valores antes\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;&#x9;dichos, pero ten cuidado sino \n&lt;br&gt;&quot; +&#xd;&#xa;&quot;&#x9;tienes ninguna estadistica en CRITICO, y te \n&lt;br&gt;&quot; +&#xd;&#xa;&quot;&#x9;encuentras saludable. Esta te hara enfermar.&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/maxpocionP2.png"/>
@@ -531,6 +595,18 @@
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Aventura.jpg"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFondoInicio">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/fondo inicio.jpeg"/>
         </Property>
       </Properties>
       <Constraints>

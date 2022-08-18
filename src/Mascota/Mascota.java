@@ -59,12 +59,12 @@ public class Mascota {
 
     public void alimentar(Alimentos comida) {
         setEnergia(comida.getCantidadEnergia());
-        setHambre(comida.getCantidadAlimento());
+        setHambre(-comida.getCantidadAlimento());
     }
 
     public void Actividad(Actividades actividad) {
         setEnergia(-actividad.getCantidadEnergia());
-        setAburrimiento(actividad.getCantidadAburrimiento());
+        setAburrimiento(-actividad.getCantidadAburrimiento());
     }
 
     public int getEdad() {
@@ -80,15 +80,43 @@ public class Mascota {
     }
 
     public void setEnergia(int energia) {
-        if (energia > 0) {
+        if (energia == -1) {
             this.energia += energia;
-            if (this.energia > 100) {
+            if (this.energia - energia <= 10 && this.estadoSalud == true) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.energia - energia > 0 && this.energia - energia < 10 && this.estadoSalud == false && this.energia >= 10) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.energia <= 0) {
+                JOptionPane.showMessageDialog(null, "La estadistica de ENERGIA llego a su MINIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+                this.energia = 0;
+            }
+        } else if (energia > 0) {
+            this.energia += energia;
+            
+            if (this.energia >= 100) {
                 this.energia = 100;
             }
-        } else {
-            this.energia += energia;
-            if (this.energia < 0) {
+        } else if (energia<0){
+            if (this.energia + energia < 11 && this.estadoSalud == true) {
+                this.energia += energia;
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.energia > 10 && this.estadoSalud == false && this.energia + energia <= 10) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
                 this.vida = false;
+            } else if (this.energia + energia <= 0) {
+                JOptionPane.showMessageDialog(null, "La estadistica de ENERGIA llego a su MINIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else{
+                comprobarEstado();
+                this.energia += energia;
             }
         }
     }
@@ -98,9 +126,43 @@ public class Mascota {
     }
 
     public void setHambre(int hambre) {
-        this.hambre -= hambre;
-        if (this.hambre < 0) {
-            this.hambre = 0;
+        if ( hambre== 1) {
+            this.hambre += hambre;
+            if (this.hambre - hambre >= 90 && this.estadoSalud == true) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.hambre - hambre > 90 && this.hambre - hambre < 100 && this.estadoSalud == false && this.hambre <= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.hambre >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de HAMBRE llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            }
+        } else if (hambre < 0) {
+            this.hambre += hambre;
+            
+            if (this.hambre <= 0) {
+                this.hambre = 0;
+            }
+        } else if (hambre>0){
+            if (this.hambre + hambre > 90 && this.estadoSalud == true) {
+                this.hambre += hambre;
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.hambre < 90 && this.estadoSalud == false && this.hambre + hambre >= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.hambre + hambre >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de HAMBRE llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else{
+                comprobarEstado();
+                this.hambre += hambre;
+            }
         }
     }
 
@@ -109,14 +171,43 @@ public class Mascota {
     }
 
     public void setAburrimiento(int aburrimiento) {
-        if (this.aburrimiento <= 25) {
-            this.aburrimiento -= aburrimiento;
-            if (this.aburrimiento <= 0) {
-                this.aburrimiento = 0;
+        if ( aburrimiento== 1) {
+            this.aburrimiento += aburrimiento;
+            if (this.aburrimiento - aburrimiento >= 90 && this.estadoSalud == true) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.aburrimiento - aburrimiento > 90 && this.aburrimiento - aburrimiento < 100 && this.estadoSalud == false && this.aburrimiento <= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.aburrimiento >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de ABURRIMIENTO llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
                 this.vida = false;
             }
-        } else {
-            this.aburrimiento -= aburrimiento;
+        } else if (aburrimiento < 0) {
+            this.aburrimiento += aburrimiento;
+            
+            if (this.aburrimiento <= 0) {
+                this.aburrimiento = 0;
+            }
+        } else if (aburrimiento>0){
+            if (this.aburrimiento + aburrimiento > 90 && this.estadoSalud == true) {
+                this.aburrimiento += aburrimiento;
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.aburrimiento < 90 && this.estadoSalud == false && this.aburrimiento + aburrimiento >= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.aburrimiento + aburrimiento >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de ABURRIMIENTO llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else{
+                comprobarEstado();
+                this.aburrimiento += aburrimiento;
+            }
         }
     }
 
@@ -125,9 +216,43 @@ public class Mascota {
     }
 
     public void setNecesidades(int necesidades) {
-        this.necesidades -= necesidades;
-        if (this.necesidades < 0) {
-            this.necesidades = 0;
+        if ( necesidades== 1) {
+            this.necesidades += necesidades;
+            if (this.necesidades - necesidades >= 90 && this.estadoSalud == true) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.necesidades - necesidades > 90 && this.necesidades - necesidades < 100 && this.estadoSalud == false && this.necesidades <= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.necesidades >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de NECESIDADES llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            }
+        } else if (necesidades < 0) {
+            this.necesidades += necesidades;
+            
+            if (this.necesidades <= 0) {
+                this.necesidades = 0;
+            }
+        } else if (necesidades>0){
+            if (this.necesidades + necesidades > 90 && this.estadoSalud == true) {
+                this.necesidades += necesidades;
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.estadoSalud = false;
+            } else if (this.necesidades < 90 && this.estadoSalud == false && this.necesidades + necesidades >= 90) {
+                comprobarEstado();
+                JOptionPane.showMessageDialog(null, "Estas enfermo y volviste a enfermar. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else if (this.necesidades + necesidades >= 100) {
+                JOptionPane.showMessageDialog(null, "La estadistica de NECESIDADES llego a su MAXIMO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            } else{
+                comprobarEstado();
+                this.necesidades += necesidades;
+            }
         }
     }
 
@@ -140,17 +265,10 @@ public class Mascota {
     }
 
     public void avanceTiempo() {
-        this.energia--;
-        this.aburrimiento++;
-        this.hambre++;
-        this.necesidades++;
-    }
-
-    public boolean comprobarEnfermedad() {
-        if (this.estadoSalud == false) {
-
-        }
-        return false;
+        setEnergia(-1);
+        setAburrimiento(1);
+        setHambre(1);
+        setNecesidades(1);
     }
 
     public void usarMedicamento(Medicinas medicamento) {
@@ -162,58 +280,40 @@ public class Mascota {
                 this.setEnergia(20);
             }
             if (this.aburrimiento > 90) {
-                this.setAburrimiento(20);
+                this.setAburrimiento(-20);
             }
             if (this.hambre > 90) {
-                this.setHambre(20);
+                this.setHambre(-20);
             }
             if (this.necesidades > 90) {
-                this.setNecesidades(20);
+                this.setNecesidades(-20);
             }
         }
     }
 
-    public boolean comprobarEstado(boolean estadoM) {
-        int contador;
-        if (estadoM) {
-            contador = 0;
-        } else {
-            contador = 1;
-        }
+    public void comprobarEstado() {
+        if (this.estadoSalud == false) {
+            int contador = 0;
 
-        if (contador == 0) {
             if (this.energia < 10) {
-                this.estadoSalud = false;
-            } else if (this.aburrimiento > 90) {
-                this.estadoSalud = false;
-            } else if (this.hambre > 90) {
-                this.estadoSalud = false;
-            } else if (this.necesidades > 90) {
-                this.estadoSalud = false;
+                contador++;
             }
-            
-            if (this.estadoSalud==false) {
-                return true;
+            if (this.aburrimiento > 90) {
+                contador++;
             }
+            if (this.hambre > 90) {
+                contador++;
+            }
+            if (this.necesidades > 90) {
+                contador++;
+            }
+
+            if (contador >= 2) {
+                JOptionPane.showMessageDialog(null, "Tienes mas de una estadistica en estado CRITICO. \nTu mascota esta MUERTA", "Notificacion", JOptionPane.ERROR_MESSAGE);
+                this.vida = false;
+            }
+
         }
-        
-        if (contador == 1) {
-            int contadorInterno = 0;
-            if (this.energia < 10) {
-                contadorInterno++;
-            } else if (this.aburrimiento > 90) {
-                contadorInterno++;
-            } else if (this.hambre > 90) {
-                contadorInterno++;
-            } else if (this.necesidades > 90) {
-                contadorInterno++;
-            }
-            
-            if (contadorInterno >= 2) {
-                this.estadoSalud=false;
-            }
-        }
-        return true;
     }
 
     public void IrAlSanitario() {
@@ -223,33 +323,11 @@ public class Mascota {
         }
     }
 
-//    public boolean realizarCura(){
-//        if (this.estado=false) {
-//            this.estado=true;
-//            return this.estado;
-//        } else {
-//            this.estado=false;
-//            return this.estado;
-//        }
-//    }
     public void Descansar() {
-        this.energia += 10;
-        this.necesidades += 5;
-        this.hambre += 5;
-        this.aburrimiento += 5;
-
-        if (this.energia > 100) {
-            this.energia = 100;
-        }
-        if (this.aburrimiento > 100) {
-            this.aburrimiento = 100;
-        }
-        if (this.hambre > 100) {
-            this.hambre = 100;
-        }
-        if (this.necesidades > 100) {
-            this.necesidades = 100;
-        }
+        this.setEnergia(10);
+        this.setHambre(5);
+        this.setNecesidades(5);
+        this.setAburrimiento(5);
     }
 
 }

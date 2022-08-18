@@ -78,6 +78,12 @@ public class Tamagotchi extends javax.swing.JFrame {
         }
     }
     
+    public void ComprobarVida(){
+        if (mascota.isVida()==false) {
+            System.exit(0);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,7 +96,10 @@ public class Tamagotchi extends javax.swing.JFrame {
 
         lblEdad2 = new javax.swing.JLabel();
         btnComenzar = new javax.swing.JButton();
-        lblFondoInicio = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         btnAlga = new javax.swing.JButton();
         barAburrimiento = new javax.swing.JProgressBar();
         barEnergia = new javax.swing.JProgressBar();
@@ -117,6 +126,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         btnAventura = new javax.swing.JButton();
         btnPocionMax = new javax.swing.JButton();
         lblEscenario = new javax.swing.JLabel();
+        lblFondoInicio = new javax.swing.JLabel();
 
         lblEdad2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -134,11 +144,28 @@ public class Tamagotchi extends javax.swing.JFrame {
         });
         getContentPane().add(btnComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 150, 50));
 
-        lblFondoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo inicio.jpeg"))); // NOI18N
-        getContentPane().add(lblFondoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Hambre:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 87, 60, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Energia:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 60, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Necesidades:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 60, 90, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Aburrimiento:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 36, 100, -1));
 
         btnAlga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/algaP1.png"))); // NOI18N
-        btnAlga.setToolTipText("");
+        btnAlga.setToolTipText("FigyBerry:\n        Energia: +5\n        Hambre: -5\n        Enfriamiento: 5 Segundos");
         btnAlga.setContentAreaFilled(false);
         btnAlga.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/algaP2.png"))); // NOI18N
         btnAlga.addActionListener(new java.awt.event.ActionListener() {
@@ -149,23 +176,20 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnAlga, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, -1, -1));
 
         barAburrimiento.setToolTipText("");
-        barAburrimiento.setString("Aburrimiento");
         barAburrimiento.setStringPainted(true);
         getContentPane().add(barAburrimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 35, 175, 20));
 
-        barEnergia.setString("Energia");
         barEnergia.setStringPainted(true);
         getContentPane().add(barEnergia, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 175, 20));
 
-        barHambre.setString("Hambre");
         barHambre.setStringPainted(true);
         getContentPane().add(barHambre, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 85, 175, 20));
 
-        barNecesidades.setString("Necesidades");
         barNecesidades.setStringPainted(true);
         getContentPane().add(barNecesidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 175, 20));
 
         btnDescansar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descansarP1.jpg"))); // NOI18N
+        btnDescansar.setToolTipText("Dormir:\n        Energia:\t     +10\n        Hambre: \t     +5\n        Aburrimiento:  +5\n        Necesidades:    +5\n        Enfriamiento:  10 Segundos");
         btnDescansar.setContentAreaFilled(false);
         btnDescansar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descansarP2.jpg"))); // NOI18N
         btnDescansar.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +224,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(lblEstadoSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 90, 126, 30));
 
         btnCaminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/caminarP1.png"))); // NOI18N
+        btnCaminar.setToolTipText("Caminar:\n        Energia: -5\n        Aburrimiento: -5\n        Enfriamiento: 5 Segundos");
         btnCaminar.setContentAreaFilled(false);
         btnCaminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/caminarP2.png"))); // NOI18N
         btnCaminar.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +235,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnCaminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, -1, -1));
 
         btnBabiri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/BabiriBerryP1.png"))); // NOI18N
+        btnBabiri.setToolTipText("BabiriBerry:\n        Energia: +15\n        Hambre: -15\n        Enfriamiento: 15 Segundos");
         btnBabiri.setContentAreaFilled(false);
         btnBabiri.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/BabiriBerryP2.png"))); // NOI18N
         btnBabiri.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +246,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnBabiri, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, -1, -1));
 
         btnFigy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/FigyBerryP1.png"))); // NOI18N
+        btnFigy.setToolTipText("FigyBerry:\n        Energia: +20\n        Hambre: -20\n        Enfriamiento: 20 Segundos");
         btnFigy.setContentAreaFilled(false);
         btnFigy.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/FigyBerryP2.png"))); // NOI18N
         btnFigy.addActionListener(new java.awt.event.ActionListener() {
@@ -230,6 +257,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnFigy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, -1, -1));
 
         btnGrepa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/GrepaBerryP1.png"))); // NOI18N
+        btnGrepa.setToolTipText("GrepaBerry:\n        Energia: +10\n        Hambre: -10\n        Enfriamiento: 10 Segundos");
         btnGrepa.setContentAreaFilled(false);
         btnGrepa.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/GrepaBerryP2.png"))); // NOI18N
         btnGrepa.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +268,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnGrepa, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, -1, -1));
 
         btnTanga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/TangaBerryP1.png"))); // NOI18N
+        btnTanga.setToolTipText("TangaBerry:\n        Energia: +25\n        Hambre: -25\n        Enfriamiento: 25 Segundos");
         btnTanga.setContentAreaFilled(false);
         btnTanga.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosComida/TangaBerryP2.png"))); // NOI18N
         btnTanga.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +279,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnTanga, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, -1, -1));
 
         btnNadar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/nadarP1.png"))); // NOI18N
+        btnNadar.setToolTipText("Nadar:\n        Energia: -10\n        Aburrimiento: -10\n        Enfriamiento: 10 Segundos");
         btnNadar.setContentAreaFilled(false);
         btnNadar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/nadarP2.png"))); // NOI18N
         btnNadar.addActionListener(new java.awt.event.ActionListener() {
@@ -260,6 +290,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnNadar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
 
         btnEntrenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/entrenarP1.png"))); // NOI18N
+        btnEntrenar.setToolTipText("Entrenar:\n        Energia: -15\n        Aburrimiento: -15\n        Enfriamiento: 15 Segundos");
         btnEntrenar.setContentAreaFilled(false);
         btnEntrenar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/entrenarP2.png"))); // NOI18N
         btnEntrenar.addActionListener(new java.awt.event.ActionListener() {
@@ -270,6 +301,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnEntrenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, -1, -1));
 
         btnBatallar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallarP1.jpg"))); // NOI18N
+        btnBatallar.setToolTipText("Batallar:\n        Energia: -20\n        Aburrimiento: -20\n        Enfriamiento: 20 Segundos");
         btnBatallar.setContentAreaFilled(false);
         btnBatallar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallarP2.jpg"))); // NOI18N
         btnBatallar.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +312,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnBatallar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 45, 45));
 
         btnBatallaLegen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallalegendariaP1.jpg"))); // NOI18N
+        btnBatallaLegen.setToolTipText("Batalla Legendaria:\n        Energia: -25\n        Aburrimiento: -25\n        Enfriamiento: 25 Segundos");
         btnBatallaLegen.setContentAreaFilled(false);
         btnBatallaLegen.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosActividades/batallalegendariaP2.jpg"))); // NOI18N
         btnBatallaLegen.addActionListener(new java.awt.event.ActionListener() {
@@ -290,6 +323,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnBatallaLegen, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 45, 45));
 
         btnSanitario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BañoP1.jpg"))); // NOI18N
+        btnSanitario.setToolTipText("Bañarse:\n        Necesidades: -10\n        Enfriamiento: 10 Segundos");
         btnSanitario.setContentAreaFilled(false);
         btnSanitario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BañoP2.jpg"))); // NOI18N
         btnSanitario.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +334,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnSanitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
 
         btnCentroPo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/centroPokeIconoP1.png"))); // NOI18N
+        btnCentroPo.setToolTipText("\tIR AL CENTRO POKEMON");
         btnCentroPo.setContentAreaFilled(false);
         btnCentroPo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/centroPokeIconoP2.png"))); // NOI18N
         btnCentroPo.addActionListener(new java.awt.event.ActionListener() {
@@ -310,6 +345,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnCentroPo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         btnAventura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poke40.png"))); // NOI18N
+        btnAventura.setToolTipText("\tIR DE EXPEDICION");
         btnAventura.setContentAreaFilled(false);
         btnAventura.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poke50.png"))); // NOI18N
         btnAventura.addActionListener(new java.awt.event.ActionListener() {
@@ -320,6 +356,18 @@ public class Tamagotchi extends javax.swing.JFrame {
         getContentPane().add(btnAventura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         btnPocionMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maxpocionP1.png"))); // NOI18N
+        btnPocionMax.setToolTipText("<html>PocionMaxima:<br>\n" +
+            "        Energia:            -20\n<br>" +
+            "        Hambre:           -20\n<br>" +
+            "        Aburrimiento:  -20\n<br>" +
+            "        Necesidades:    -20\n<br>" +
+            "        Enfriamiento:    1 Dia.\n<br>" +
+            " 	Condicionado:\n<br>" +
+            "	Te cura si te encuentras enfermo y te aumenta\n<br>" +
+            " 	la estadistica en CRITICO con los valores antes\n<br>" +
+            "	dichos, pero ten cuidado sino \n<br>" +
+            "	tienes ninguna estadistica en CRITICO, y te \n<br>" +
+            "	encuentras saludable. Esta te hara enfermar.<html>");
         btnPocionMax.setContentAreaFilled(false);
         btnPocionMax.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maxpocionP2.png"))); // NOI18N
         btnPocionMax.addActionListener(new java.awt.event.ActionListener() {
@@ -332,14 +380,17 @@ public class Tamagotchi extends javax.swing.JFrame {
         lblEscenario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aventura.jpg"))); // NOI18N
         getContentPane().add(lblEscenario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
 
+        lblFondoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo inicio.jpeg"))); // NOI18N
+        getContentPane().add(lblFondoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 400));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAlgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlgaActionPerformed
         // TODO add your handling code here:
         mascota.alimentar(alga);
-        System.out.println(mascota.getEnergia());
-        System.out.println(mascota.hambre);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnAlga.setEnabled(false);
         temporizadorBotones(alga.getTiempoRestante(),this.btnAlga);
     }//GEN-LAST:event_btnAlgaActionPerformed
@@ -350,7 +401,7 @@ public class Tamagotchi extends javax.swing.JFrame {
         this.lblTextoImagen.setText("Actividades");
         actualizarEstadoSalud(mascota.isEstadoSalud());
         actualizarEdad();
-        temporizadorEdad(10);
+        temporizadorEdad(15);
         actualizarBarra();
         temporizadorJuego();
         BotonesAlimentos(false);
@@ -379,6 +430,8 @@ public class Tamagotchi extends javax.swing.JFrame {
     private void btnBabiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBabiriActionPerformed
         // TODO add your handling code here:
         mascota.alimentar(Babiri);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnBabiri.setEnabled(false);
         temporizadorBotones(alga.getTiempoRestante(),this.btnBabiri);
     }//GEN-LAST:event_btnBabiriActionPerformed
@@ -386,6 +439,8 @@ public class Tamagotchi extends javax.swing.JFrame {
     private void btnFigyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFigyActionPerformed
         // TODO add your handling code here:
         mascota.alimentar(Figy);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnFigy.setEnabled(false);
         temporizadorBotones(Figy.getTiempoRestante(),this.btnFigy);
     }//GEN-LAST:event_btnFigyActionPerformed
@@ -393,6 +448,8 @@ public class Tamagotchi extends javax.swing.JFrame {
     private void btnGrepaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrepaActionPerformed
         // TODO add your handling code here:
         mascota.alimentar(Grepa);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnGrepa.setEnabled(false);
         temporizadorBotones(Grepa.getTiempoRestante(),this.btnGrepa);
     }//GEN-LAST:event_btnGrepaActionPerformed
@@ -400,13 +457,17 @@ public class Tamagotchi extends javax.swing.JFrame {
     private void btnTangaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTangaActionPerformed
         // TODO add your handling code here:
         mascota.alimentar(Tanga);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnTanga.setEnabled(false);
         temporizadorBotones(Tanga.getTiempoRestante(),this.btnTanga);
     }//GEN-LAST:event_btnTangaActionPerformed
 
     private void btnBatallaLegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatallaLegenActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Actividad(this.batallaLegen);
+        ComprobarVida();
         this.btnBatallaLegen.setEnabled(false);
         temporizadorBotones(batallaLegen.getTiempoRestante(),this.btnBatallaLegen);
     }//GEN-LAST:event_btnBatallaLegenActionPerformed
@@ -433,42 +494,60 @@ public class Tamagotchi extends javax.swing.JFrame {
 
     private void btnCaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaminarActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Actividad(caminar);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnCaminar.setEnabled(false);
         temporizadorBotones(caminar.getTiempoRestante(),this.btnCaminar);
     }//GEN-LAST:event_btnCaminarActionPerformed
 
     private void btnNadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNadarActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Actividad(nadar);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnNadar.setEnabled(false);
         temporizadorBotones(nadar.getTiempoRestante(),this.btnNadar);
     }//GEN-LAST:event_btnNadarActionPerformed
 
     private void btnEntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenarActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Actividad(entrenar);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnEntrenar.setEnabled(false);
         temporizadorBotones(entrenar.getTiempoRestante(),this.btnEntrenar);
     }//GEN-LAST:event_btnEntrenarActionPerformed
 
     private void btnBatallarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatallarActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Actividad(batalla);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnBatallar.setEnabled(false);
         temporizadorBotones(batalla.getTiempoRestante(),this.btnBatallar);
     }//GEN-LAST:event_btnBatallarActionPerformed
 
     private void btnDescansarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescansarActionPerformed
         // TODO add your handling code here:
+//        comprobarDobleEnfermedad();
         mascota.Descansar();
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnDescansar.setEnabled(false);
         temporizadorBotones(10,this.btnDescansar);
     }//GEN-LAST:event_btnDescansarActionPerformed
 
+    
     private void btnSanitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanitarioActionPerformed
         // TODO add your handling code here:
         mascota.IrAlSanitario();
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnSanitario.setEnabled(false);
         temporizadorBotones(10,this.btnSanitario);
     }//GEN-LAST:event_btnSanitarioActionPerformed
@@ -476,6 +555,8 @@ public class Tamagotchi extends javax.swing.JFrame {
     private void btnPocionMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocionMaxActionPerformed
         // TODO add your handling code here:
         mascota.usarMedicamento(PocionMax);
+        ComprobarVida();
+        actualizarEstadoSalud(mascota.isEstadoSalud());
         this.btnPocionMax.setEnabled(false);
         temporizadorBotones(PocionMax.getTiempoRestante(),this.btnPocionMax);
     }//GEN-LAST:event_btnPocionMaxActionPerformed
@@ -491,37 +572,31 @@ public class Tamagotchi extends javax.swing.JFrame {
             }
          ;},retraso * 1000);
     }
-    
+      
     
     public void temporizadorJuego() {
-        System.out.println("Entre en el timer");
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 mascota.avanceTiempo();
-                boolean x = mascota.comprobarEstado(mascota.isEstadoSalud());
-                if (!x) {
-                    actualizarEstadoSalud(false);
-                    JOptionPane.showMessageDialog(null, "Tienes alguna estadista en estado critico. \nTu mascota esta ENFERMA", "Notificacion", JOptionPane.ERROR_MESSAGE);
-                }
-                System.out.println("energia"+mascota.getEnergia());
-                System.out.println("aburrimiento"+mascota.getAburrimiento());
-                System.out.println("necesidades"+mascota.getNecesidades());
-                System.out.println("hambre"+mascota.getHambre());
+                actualizarEstadoSalud(mascota.isEstadoSalud());
+                ComprobarVida();
                 actualizarBarra();
                 temporizadorJuego();
             }
-         ;},3 * 1000);
+         ;},5 * 1000);
     }
     
     public void temporizadorEdad(int tiempo) {
-        System.out.println("Entre en el timer");
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 actualizarEdad();
+                if (mascota.isVida()==false) {
+                    timer.cancel();
+                }
                 if (mascota.getEdad()==1) {
                     lblMascota.setIcon(new ImageIcon(getClass().getResource("/ImagMascota/"+"squirtle.gif")));
                 } else if (mascota.getEdad()==10) {
@@ -592,6 +667,10 @@ public class Tamagotchi extends javax.swing.JFrame {
     private javax.swing.JButton btnPocionMax;
     private javax.swing.JButton btnSanitario;
     private javax.swing.JButton btnTanga;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     public javax.swing.JLabel lblEdad2;
     public javax.swing.JLabel lblEdad3;
     private javax.swing.JLabel lblEscenario;
