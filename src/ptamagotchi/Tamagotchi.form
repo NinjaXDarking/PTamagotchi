@@ -59,6 +59,18 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="lblFondoInicio">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/fondo inicio.jpeg"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -128,7 +140,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/algaP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="FigyBerry:&#xa;        Energia: +5&#xa;        Hambre: -5&#xa;        Enfriamiento: 5 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;FigyBerry:&lt;br&gt;&#xa;        Energia: +5&lt;br&gt;&#xa;        Hambre: -5&lt;br&gt;&#xa;        Enfriamiento: 5 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/algaP2.png"/>
@@ -201,7 +213,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/descansarP1.jpg"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Dormir:&#xa;        Energia:&#x9;     +10&#xa;        Hambre: &#x9;     +5&#xa;        Aburrimiento:  +5&#xa;        Necesidades:    +5&#xa;        Enfriamiento:  10 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Dormir:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Energia:&#x9;     +10\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Hambre: &#x9;     +5\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Aburrimiento:  +5\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Necesidades:    +5\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento:  10 Segundos&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/descansarP2.jpg"/>
@@ -334,7 +348,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/caminarP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Caminar:&#xa;        Energia: -5&#xa;        Aburrimiento: -5&#xa;        Enfriamiento: 5 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Caminar:&lt;br&gt;&#xa;        Energia: -5&lt;br&gt;&#xa;        Aburrimiento: -5&lt;br&gt;&#xa;        Enfriamiento: 5 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/caminarP2.png"/>
@@ -354,7 +368,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/BabiriBerryP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="BabiriBerry:&#xa;        Energia: +15&#xa;        Hambre: -15&#xa;        Enfriamiento: 15 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;BabiriBerry:&lt;br&gt;&#xa;        Energia: +15&lt;br&gt;&#xa;        Hambre: -15&lt;br&gt;&#xa;        Enfriamiento: 15 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/BabiriBerryP2.png"/>
@@ -374,7 +388,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/FigyBerryP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="FigyBerry:&#xa;        Energia: +20&#xa;        Hambre: -20&#xa;        Enfriamiento: 20 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;FigyBerry:&lt;br&gt;&#xa;        Energia: +20&lt;br&gt;&#xa;        Hambre: -20&lt;br&gt;&#xa;        Enfriamiento: 20 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/FigyBerryP2.png"/>
@@ -394,7 +408,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/GrepaBerryP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="GrepaBerry:&#xa;        Energia: +10&#xa;        Hambre: -10&#xa;        Enfriamiento: 10 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;GrepaBerry:&lt;br&gt;&#xa;        Energia: +10&lt;br&gt;&#xa;        Hambre: -10&lt;br&gt;&#xa;        Enfriamiento: 10 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/GrepaBerryP2.png"/>
@@ -414,7 +428,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/TangaBerryP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="TangaBerry:&#xa;        Energia: +25&#xa;        Hambre: -25&#xa;        Enfriamiento: 25 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;TangaBerry:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Energia: +25\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Hambre: -25\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento: 25 Segundos&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosComida/TangaBerryP2.png"/>
@@ -434,7 +450,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/nadarP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Nadar:&#xa;        Energia: -10&#xa;        Aburrimiento: -10&#xa;        Enfriamiento: 10 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Nadar:&lt;br&gt;&#xa;        Energia: -10&lt;br&gt;&#xa;        Aburrimiento: -10&lt;br&gt;&#xa;        Enfriamiento: 10 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/nadarP2.png"/>
@@ -454,7 +470,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/entrenarP1.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Entrenar:&#xa;        Energia: -15&#xa;        Aburrimiento: -15&#xa;        Enfriamiento: 15 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Entrenar:&lt;br&gt;&#xa;        Energia: -15&lt;br&gt;&#xa;        Aburrimiento: -15&lt;br&gt;&#xa;        Enfriamiento: 15 Segundos&lt;html&gt;"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/entrenarP2.png"/>
@@ -474,7 +490,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallarP1.jpg"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Batallar:&#xa;        Energia: -20&#xa;        Aburrimiento: -20&#xa;        Enfriamiento: 20 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Batallar:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Energia: -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Aburrimiento: -20\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento: 20 Segundos&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallarP2.jpg"/>
@@ -494,7 +512,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallalegendariaP1.jpg"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Batalla Legendaria:&#xa;        Energia: -25&#xa;        Aburrimiento: -25&#xa;        Enfriamiento: 25 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Batalla Legendaria:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Energia: -25\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Aburrimiento: -25\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento: 25 Segundos&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/IconosActividades/batallalegendariaP2.jpg"/>
@@ -514,7 +534,9 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Ba&#xf1;oP1.jpg"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Ba&#xf1;arse:&#xa;        Necesidades: -10&#xa;        Enfriamiento: 10 Segundos"/>
+        <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;Ba&#xf1;arse:\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Necesidades: -10\n&lt;br&gt;&quot; +&#xd;&#xa;&quot;        Enfriamiento: 10 Segundos&lt;html&gt;&quot;" type="code"/>
+        </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Ba&#xf1;oP2.jpg"/>
@@ -595,18 +617,6 @@
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/Aventura.jpg"/>
-        </Property>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblFondoInicio">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/fondo inicio.jpeg"/>
         </Property>
       </Properties>
       <Constraints>
